@@ -43,8 +43,7 @@ jobs:
 
     - name: Setup Database
       run: |
-        bundle exec rake db:create
-        bundle exec rake db:schema:load
+        bin/rails db:setup
       env:
         RAILS_ENV: test
         DATABASE_HOST: localhost
@@ -52,7 +51,7 @@ jobs:
         DATABASE_PASSWORD: postgres
 
     - name: Run tests
-      run: bundle exec rake
+      run: bin/rspec
       env:
         RAILS_ENV: test
         DATABASE_HOST: localhost
