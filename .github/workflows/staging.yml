@@ -50,6 +50,7 @@ jobs:
         bundle exec rake db:schema:load
       env:
         RAILS_ENV: test
+        DATABASE_URL: localhost
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
 
@@ -57,5 +58,6 @@ jobs:
       run: bundle exec rake
       env:
         RAILS_ENV: test
+        DATABASE_URL: localhost
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
