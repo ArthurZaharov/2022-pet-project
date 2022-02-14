@@ -41,16 +41,18 @@ jobs:
       with:
         bundler-cache: true
 
+    - name: Run Quality Check
+      run: bin/rubocop
+
     - name: Setup Database
-      run: |
-        bin/rails db:setup
+      run: bin/rails db:setup
       env:
         RAILS_ENV: test
         DATABASE_HOST: localhost
         DATABASE_USER: postgres
         DATABASE_PASSWORD: postgres
 
-    - name: Run tests
+    - name: Run Tests
       run: bin/rspec
       env:
         RAILS_ENV: test
