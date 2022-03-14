@@ -34,4 +34,4 @@ jobs:
           --health-retries 5
 
     steps:
-      - uses: actions/test_stepsn@v1
+      - uses: actions/test_steps@v1
